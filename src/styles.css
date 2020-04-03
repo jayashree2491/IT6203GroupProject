@@ -1,1 +1,47 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+@import '~material-design-icons/iconfont/material-icons.css';
+
+body {
+    background-color: #F5F5F5;
+    font-family: Trebuchet, Verdana, Arial;
+}
+form {
+    background-color: #F5F5F5;
+    font-family: Trebuchet, Verdana, Arial;
+}
+span { 
+    font-family: Trebuchet, Verdana, Arial;
+    font-size: 15px;
+    font: bold;
+
+}
+.blogBackground {
+    background-color: #F5F5F5;
+}
+.header { 
+    text-align: center;
+    padding: 5px;
+    margin: auto;
+    font-size: 15px;
+    font-family: Trebuchet, Verdana, Arial;
+    background-color: #F5F5F5;
+}
+.blogMenu {
+    width: auto;
+    background-color: #F5F5F5;
+    font-family: Trebuchet, Verdana, Arial;
+    padding: 5px;
+    font-size: 15px;
+
+}
+.button {
+    background-color: #231f20;   
+    border: 1px solid #b0b3b2;
+    font-size: 15px;
+    padding: 5px;
+    width: auto;
+    color: white; 
+    margin-top: 20px;
+    opacity: 1.0;
+}

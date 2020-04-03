@@ -1,0 +1,23 @@
+<mat-sidenav-container class="blogBackground">
+    <mat-sidenav #sidenav mode="toggle" [(opened)]="opened" (closed)='closed' class="blogMenu">
+                <a><button class="button" mat-raised-button style="margin: 5px">Home</button></a>
+                <a><button class="button" mat-raised-button style="margin: 5px">Appointments</button></a>
+                <a><button class="button" mat-raised-button style="margin: 5px">Meetups</button></a>
+                <a><button class="button" mat-raised-button [matMenuTriggerFor]="menu" style="margin: 5px">Blogs</button></a>
+                <mat-menu #menu="matMenu">
+                    <button mat-menu-item routerLink="/listBlogs">
+                        <span>List Blogs</span>
+                    </button>
+                    <button mat-menu-item routerLink="/addBlog">
+                        <span>Add Blog Entry</span>
+                    </button>
+                </mat-menu>
+                <a><button class="button" mat-raised-button>Resources</button></a>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <p><button mat-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+                <span>Menu</span>
+            </button></p>
+    </mat-sidenav-content>
+</mat-sidenav-container>

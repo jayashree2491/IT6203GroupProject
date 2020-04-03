@@ -1,0 +1,15 @@
+<h2>Current Blog Posts</h2>
+<mat-list *ngFor="let blog of blogs let i = index" class="blogBackground">
+  <mat-list-item>{{blog._id}}</mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>Date: {{blog.blogDate}}</mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>Author: {{blog.blogAuthor}}</mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>Topic: {{blog.blogTopic}}</mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item>Post: {{blog.blogContent}}</mat-list-item>
+  <mat-divider></mat-divider>
+  <button mat-button color="warn" (click)="onDelete(blog._id)">DELETE</button>
+  <button mat-button color="accent" [routerLink]="['/editBlog', blog._id]">UPDATE</button>
+</mat-list>

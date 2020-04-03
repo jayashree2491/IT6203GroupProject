@@ -1,0 +1,32 @@
+<div class = "newBlogPost">
+  <h2>{{mode}} Blog Post</h2>
+
+
+  <form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
+      <mat-form-field>
+        <input formControlName="blogDate" matInput [matDatepicker]="blogdate" placeholder="Blog Date">
+        <mat-datepicker-toggle matSuffix [for]="blogdate"></mat-datepicker-toggle>
+        <mat-datepicker #blogdate></mat-datepicker>
+      </mat-form-field>
+  
+      <mat-form-field >
+        <input formControlName="blogAuthor" matInput placeholder="Blog Author" >
+      </mat-form-field>
+
+      
+      <mat-form-field >
+        <input formControlName="blogTopic" matInput placeholder="Blog Topic" >
+      </mat-form-field>
+  
+      <mat-form-field >
+        <textarea formControlName="blogContent" matInput placeholder="Blog Content" cols="8" rows="20"></textarea>
+      </mat-form-field>
+    
+      <p>
+        <button class="button" type="submit" mat-raised-button> Submit</button>
+      </p>
+      <p>
+        <button class="button" type="reset" (click)="resetForm()" mat-raised-button> Reset</button>
+      </p>
+</form>
+  </div>
