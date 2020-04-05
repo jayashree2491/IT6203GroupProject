@@ -6,6 +6,19 @@ body {
     background-color: #F5F5F5;
     font-family: Trebuchet, Verdana, Arial;
 }
+html, body { 
+    margin: 0;
+    height: 100%;
+}
+
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+    height: 100%;
+}
+
+mat-sidenav {
+    width: 200px;
+}
+
 form {
     background-color: #F5F5F5;
     font-family: Trebuchet, Verdana, Arial;
@@ -28,13 +41,14 @@ span {
     background-color: #F5F5F5;
 }
 .blogMenu {
-    width: auto;
     background-color: #F5F5F5;
     font-family: Trebuchet, Verdana, Arial;
     padding: 5px;
     font-size: 15px;
+    height: 100%;
+    opacity: .75;
+    }
 
-}
 .button {
     background-color: #231f20;   
     border: 1px solid #b0b3b2;
@@ -44,4 +58,7 @@ span {
     color: white; 
     margin-top: 20px;
     opacity: 1.0;
+}
+mat-icon { 
+    color: #231f20;
 }

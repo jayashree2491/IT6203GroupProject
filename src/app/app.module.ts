@@ -22,8 +22,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { ListBlogsComponent } from './list-blogs/list-blogs.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatMomentDateModule } from "@angular/material-moment-adapter";
+
 const appRoutes: Routes = [ {
   path: '',                     //default component to display
    component: ListBlogsComponent
@@ -67,7 +68,7 @@ const appRoutes: Routes = [ {
     MatToolbarModule,
     MatMenuModule,
     MatDatepickerModule,
-    MatNativeDateModule,
+    MatMomentDateModule,
     ReactiveFormsModule,
     RouterModule.forRoot(appRoutes)
   ],
@@ -75,3 +76,15 @@ const appRoutes: Routes = [ {
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
+export const MY_FORMATS = {
+  parse: {
+    dateInput: 'LL',
+  },
+  display: {
+    dateInput: 'LL',
+    monthYearLabel: 'MMM YYYY',
+    dateA11yLabel: 'LL',
+    monthYearA11yLabel: 'MMMM YYYY',
+  },
+};

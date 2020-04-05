@@ -6,8 +6,16 @@
     <h1>{{title}}</h1>
     <img [src]='ksuImage' width="100" height="100" border-style='black'>
   </div>
-  <app-navigation-menu></app-navigation-menu>
-  <router-outlet></router-outlet>
+  <mat-sidenav-container class="blogBackground">
+    <mat-sidenav #sidenav mode="toggle" [(opened)]="opened" (closed)='closed' class="blogMenu">
+      <app-navigation-menu></app-navigation-menu>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <p id="menubutton"><button mat-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button></p>
+            <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
 </body>
-
 </html>

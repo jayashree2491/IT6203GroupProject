@@ -1,29 +1,27 @@
 <div class = "newBlogPost">
   <h2>{{mode}} Blog Post</h2>
-
-
   <form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
       <mat-form-field>
-        <input formControlName="blogDate" matInput [matDatepicker]="blogdate" placeholder="Blog Date">
-        <mat-datepicker-toggle matSuffix [for]="blogdate"></mat-datepicker-toggle>
-        <mat-datepicker #blogdate></mat-datepicker>
+        <input matInput [matDatepicker]="blogDatePicker" placeholder="Blog Date" formControlName="blogDate" required>
+        <mat-datepicker-toggle matSuffix [for]="blogDatePicker"></mat-datepicker-toggle>
+        <mat-datepicker #blogDatePicker></mat-datepicker>
       </mat-form-field>
   
       <mat-form-field >
-        <input formControlName="blogAuthor" matInput placeholder="Blog Author" >
+        <input formControlName="blogAuthor" matInput placeholder="Blog Author" required>
       </mat-form-field>
 
       
       <mat-form-field >
-        <input formControlName="blogTopic" matInput placeholder="Blog Topic" >
+        <input formControlName="blogTopic" matInput placeholder="Blog Topic" required>
       </mat-form-field>
   
       <mat-form-field >
-        <textarea formControlName="blogContent" matInput placeholder="Blog Content" cols="8" rows="20"></textarea>
+        <textarea formControlName="blogContent" matInput placeholder="Blog Content" cols="8" rows="20" required></textarea>
       </mat-form-field>
     
       <p>
-        <button class="button" type="submit" mat-raised-button> Submit</button>
+        <button class="button" type="submit" mat-raised-button (click)="momentDateConverter()"> Submit</button>
       </p>
       <p>
         <button class="button" type="reset" (click)="resetForm()" mat-raised-button> Reset</button>

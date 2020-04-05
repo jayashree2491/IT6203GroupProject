@@ -41,8 +41,8 @@ export class BlogService {
               });
               location.reload();
         }
+
         getBlogById(blogId: string) {
             return this.http.get('http://localhost:8000/blogs/' + blogId);
-        }
-            
+        }   
             }
