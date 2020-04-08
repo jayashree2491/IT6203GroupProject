@@ -15,14 +15,13 @@ import * as moment from 'moment';
 export class NewBlogPostComponent implements OnInit {
   blogForm = new FormGroup({
     blogDate: new FormControl('', Validators.required),
-    blogAuthor: new FormControl(),
-    blogTopic: new FormControl(),
-    blogContent: new FormControl(),
+    blogAuthor: new FormControl('', Validators.required),
+    blogTopic: new FormControl('', Validators.required),
+    blogContent: new FormControl('', Validators.required),
   })
   public blogFormData
-  public mode = 'add';//default mode
+  public mode = 'Add';//default mode
   public id: string;//blog ID
-  newBlogDate; 
 
 
   constructor(private _myService: BlogService, private router: Router, public route: ActivatedRoute) { }
@@ -30,7 +29,7 @@ export class NewBlogPostComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe((paramMap: ParamMap) => {
       if (paramMap.has('_id')) {
-        this.mode = 'edit'; /*request had a parameter _id */
+        this.mode = 'Edit'; /*request had a parameter _id */
         this.id = paramMap.get('_id');
         this._myService.getBlogById(this.id).subscribe(
           data => {
@@ -46,7 +45,7 @@ export class NewBlogPostComponent implements OnInit {
         );
       }
       else {
-        this.mode = 'add';
+        this.mode = 'Add';
         this.id = null;
       }
     });
@@ -54,21 +53,21 @@ export class NewBlogPostComponent implements OnInit {
   }
   momentDateConverter() {
       
-  let newBlogDate = this.blogForm.value.blogDate = moment().format('MMMM Do YYYY, h:mm:ss a');
+  this.blogForm.value.blogDate = moment().format('MMMM Do YYYY, h:mm:ss a');
     
   }
   onSubmit() {
     if (this.mode == 'add')
     this._myService.addBlogs(this.blogForm.value.blogDate, this.blogForm.value.blogAuthor, this.blogForm.value.blogTopic, this.blogForm.value.blogContent);
     if (this.mode == 'edit')
-    console.log(this.newBlogDate);
     this._myService.updateBlog(this.id, this.blogForm.value.blogDate, this.blogForm.value.blogAuthor, this.blogForm.value.blogTopic, this.blogForm.value.blogContent);
     window.location.assign('./listBlogs/')
   
   
   }
   resetForm() {
-    this.blogForm.value.blogDate = " ";
+    this.blogForm.value.editDate = " ";
+    this.blogForm.value.postDate = " ";
     this.blogForm.value.blogAuthor = " ";
     this.blogForm.value.blogTopic = " ";
     this.blogForm.value.blogContent = " ";
