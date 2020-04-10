@@ -57,17 +57,17 @@ export class NewBlogPostComponent implements OnInit {
     
   }
   onSubmit() {
-    if (this.mode == 'add')
+    if (this.mode == 'Add')
     this._myService.addBlogs(this.blogForm.value.blogDate, this.blogForm.value.blogAuthor, this.blogForm.value.blogTopic, this.blogForm.value.blogContent);
-    if (this.mode == 'edit')
+    console.log(this.blogFormData)
+    if (this.mode == 'Edit')
     this._myService.updateBlog(this.id, this.blogForm.value.blogDate, this.blogForm.value.blogAuthor, this.blogForm.value.blogTopic, this.blogForm.value.blogContent);
     window.location.assign('./listBlogs/')
   
   
   }
   resetForm() {
-    this.blogForm.value.editDate = " ";
-    this.blogForm.value.postDate = " ";
+    this.blogForm.value.blogDate = " ";
     this.blogForm.value.blogAuthor = " ";
     this.blogForm.value.blogTopic = " ";
     this.blogForm.value.blogContent = " ";

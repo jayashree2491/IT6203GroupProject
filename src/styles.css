@@ -5,10 +5,12 @@
 body {
     background-color: #F5F5F5;
     font-family: Trebuchet, Verdana, Arial;
-}
-html, body { 
-    margin: 0;
+    margin: 0px;
     height: 100%;
+}   
+html {
+    border-color: #ffc629;
+    border-width: 2px;
 }
 
 mat-sidenav-container, mat-sidenav-content, mat-sidenav {
@@ -19,9 +21,20 @@ mat-sidenav {
     width: 200px;
 }
 
+head {
+    background-color: #ffc629;
+}
+
 form {
     background-color: #F5F5F5;
     font-family: Trebuchet, Verdana, Arial;
+    margin-right: 100px;
+    display: block;
+    width: 300px;
+}
+mat-form-field { 
+    display: block;
+    width: 250%;
 }
 span { 
     font-family: Trebuchet, Verdana, Arial;
@@ -38,8 +51,24 @@ span {
     margin: auto;
     font-size: 15px;
     font-family: Trebuchet, Verdana, Arial;
-    background-color: #F5F5F5;
+    background-color: #ffc629;
 }
+.footer { 
+    background-color: #ffc629;
+    text-align: center;
+    font-family: Trebuchet, Verdana, Arial;
+    font-size: 15px;
+}
+.newBlogPost { 
+    text-align: left;
+    margin-left: 500px;
+    float: left;
+    padding: 5px;
+    font-size: 15px;
+    font-family: Trebuchet, Verdana, Arial;
+    background-color: #F5F5F5;
+    }
+
 .blogMenu {
     background-color: #F5F5F5;
     font-family: Trebuchet, Verdana, Arial;
