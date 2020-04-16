@@ -19,5 +19,13 @@
     </button>
 </mat-menu>
 <mat-toolbar>
-<a><button class="button" mat-raised-button>Resources</button></a>
+    <a><button class="button" mat-raised-button [matMenuTriggerFor]="resourceMenu" style="margin: 5px">Resources</button></a>
 </mat-toolbar>
+<mat-menu #resourceMenu="matMenu">
+    <button mat-menu-item routerLink="/listResources">
+        <span>List Resources</span>
+    </button>
+    <button mat-menu-item routerLink="/addResource">
+        <span>Add Resource</span>
+    </button>
+</mat-menu>

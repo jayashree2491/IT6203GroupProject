@@ -24,6 +24,10 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatMomentDateModule } from "@angular/material-moment-adapter";
+import { MatTableModule } from '@angular/material/table';
+import { ListResourcesComponent } from './list-resources/list-resources.component';
+import { NewResourceFormComponent } from './new-resource-form/new-resource-form.component';
+import { ResourceService } from './resource.service';
 
 const appRoutes: Routes = [ {
   path: '',                     //default component to display
@@ -32,12 +36,25 @@ const appRoutes: Routes = [ {
    path: 'addBlog',         //when blog added 
    component: NewBlogPostComponent
  },       {
-    path: 'editBlog/:_id',         //when students edited 
+    path: 'editBlog/:_id',         //when blog edited 
     component: NewBlogPostComponent
   },      {
    path: 'listBlogs',       //when blog listed
    component: ListBlogsComponent
- },       {
+  },
+          {
+    path: 'listResources',       
+    component: ListResourcesComponent
+  },
+  {
+    path: 'editResource/:_id',          
+    component: NewResourceFormComponent
+  },
+  {
+    path: 'addResource',         
+    component: NewResourceFormComponent
+  },  
+          {
    path: '**',                 //when path cannot be found
    component: NotFoundComponent
  }
@@ -49,7 +66,9 @@ const appRoutes: Routes = [ {
     NewBlogPostComponent,
     NavigationMenuComponent,
     ListBlogsComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ListResourcesComponent,
+    NewResourceFormComponent
   ],
   imports: [
     BrowserModule,
@@ -70,21 +89,12 @@ const appRoutes: Routes = [ {
     MatDatepickerModule,
     MatMomentDateModule,
     ReactiveFormsModule,
+    MatTableModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [BlogService],
+  providers: [BlogService, ResourceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
 
-export const MY_FORMATS = {
-  parse: {
-    dateInput: 'LL',
-  },
-  display: {
-    dateInput: 'LL',
-    monthYearLabel: 'MMM YYYY',
-    dateA11yLabel: 'LL',
-    monthYearA11yLabel: 'MMMM YYYY',
-  },
-};
+

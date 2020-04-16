@@ -12,4 +12,5 @@ export class AppComponent {
   events;
   opened;
   closed;
+  tableColumns : string [] = ['resource._id', 'rtype', 'rtitle', 'rnote', 'actions'];
 }

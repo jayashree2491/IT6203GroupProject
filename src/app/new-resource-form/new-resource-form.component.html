@@ -1,0 +1,20 @@
+<div>
+    <h3>{{mode}} Resource Form</h3>
+    <form (ngSubmit)="onSubmit()" #myForm="ngForm">
+        <mat-form-field>
+            <input matInput placeholder="Type" id="type" [(ngModel)]=" rtype" name="type">
+        </mat-form-field>
+        <p>
+            <mat-form-field>
+                <input matInput placeholder="Title" id="title" [(ngModel)]=" rtitle" name="title">
+            </mat-form-field>
+        </p>
+        <mat-form-field>
+            <input matInput placeholder="Note" id="note" [(ngModel)]=" rnote" name="note">
+        </mat-form-field>
+
+        <p>
+            <button type="submit" mat-raised-button color="primary">Submit</button>
+        </p>
+    </form>
+</div>
